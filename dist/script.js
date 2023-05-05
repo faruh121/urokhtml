@@ -9,7 +9,6 @@
 // const daysInWeek = 7
 // console.log(daysInWeek)
 // const  x = prompt("Enter number",0)
-
 // let num = 10
 // num =+'10'
 // //number
@@ -30,42 +29,30 @@
 // // Bolean
 // true//правда
 // false//не правда
-
 // // null
 // null//ничего
-
 // undefined//прсвоено знач
-
 // // let age;
 // // console.log(age);//вывод undefined
-
 // // let result =confirm("что есть что?")
 // // console.log(result)
-
 // let s1 = 3
 // let s2 = 4
 // console.log('4>3',4>3)
 // console.log('4<3',4<3)
 // console.log('4 == 3',s1==s2)
 // console.log('4!=3',s1!=s2)
-
 //  console.log('"b" > "a" , "b" > "a"')
-
 // console.log('num "0"', "0".charCodeAt(0))
-
 // console.log('num "A"', "A".charCodeAt(0))
 // console.log('num "B"', "B".charCodeAt(0))
-
 // console.log('num "a"', "a".charCodeAt(0))
-
 // console.log('num "А"', "А".charCodeAt(0))
 // console.log('num "Б"', "Б".charCodeAt(0))
- 
 // let s3 = 0
 // let s4 = 0
 // console.log('null == undefined',null == undefined)
 // console.log('null === undefined',null === undefined)
-
 // const SECRET = "1233"
 // const pass = prompt("enter pass")
 // if (SECRET == pass){
@@ -73,9 +60,6 @@
 // else{
 //     console.log("erorr")
 // } 
-
-
-
 //  let a = +prompt("enter number")
 //  if (a>0){
 //      alert("положительное")
@@ -86,7 +70,6 @@
 // else{
 //     alert("это ноль)")
 // }
-
 // let b = +prompt("скольок тебе лет")
 // if (b<=120){
 //     alert("все верно")
@@ -94,7 +77,6 @@
 // else{
 //     alert("не правельно")
 // }
-
 // let c = +prompt("введите часы")
 // let q = +prompt("введите минуты")
 // let r = +prompt("введите секунды")
@@ -116,8 +98,6 @@
 // else{
 //     alert("не правельно ")
 // }
-
-
 // let x =+prompt("по x")
 // let y = +prompt(" по y")
 // if (x > 0 && y > 0){
@@ -135,7 +115,6 @@
 // else{
 //     alert("1 четверть")
 // }
-
 // let login = prompt("введите логин")
 // if (login === 'Admin') {
 //   let password = prompt('введите пароль')
@@ -145,16 +124,12 @@
 //   else if (password == '' || password == null) {
 //     alert( 'отмена' )
 //   } 
-
 //   else {
 //     alert( 'пароль не верный' )
 //   }
-
 // }
 //  else if (login === '' || login === null) {
 //   alert( 'отмена' )
 // } 
 // else {
 //   alert( "логин не зарегестрирован" )
-
-
