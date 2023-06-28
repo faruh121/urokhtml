@@ -1026,3 +1026,92 @@
 // if (h>0 && h<24 && m>0 && m<60){
 //     alert(24-h && 60 - m)
 // }
+// 1
+// Написать функцию, которая принимает 2 числа и возвра-
+// щает меньшее из них.
+// function prinemaetDvachisla(){
+//   let a = +(prompt("1 num"));
+//   let b = +(prompt("2 num"));
+//   if(a>b){
+//     console.log(b)
+//   }
+//   else if (a<b){
+//     console.log(a)
+//   }
+// }
+// prinemaetDvachisla()
+
+// Написать функцию, которая возводит переданное число
+// в указанную степень.
+// function exponent(){
+//   let a = +(prompt("число которое возвести в степени"));
+//   let b = +(prompt("степень"));
+//   console.log(a**b)
+// }
+// exponent()
+// Написать функцию, которая принимает 2 числа и знак
+// (+ - * /), считает пример и возвращает результат.
+// function calculator(){
+//   let a = +(prompt("1 num"))
+//   let b = +(prompt("2 num"))
+//   let c = prompt("znak")
+//   if (c=='+') return a+b
+//   if (c=='-') return a-b
+//   if (c=='*') return a*b
+
+
+// }
+// console.log(calculator())
+// Написать функцию, которая проверяет, является ли пере-
+// данное ей число простым.
+// function prostoechislo(){
+//   let a = +(prompt('enter number'));
+//   if (a/a && a/1){
+//     console.log("простое")
+//   }
+//   else{
+//     console.log("не простое")
+//   }
+// }
+// console.log(prostoechislo())
+// 5
+// Написать функцию, которая принимает число и выводит
+// таблицу умножения для этого числа. Вызовите функцию
+// для всех чисел от 2 до 9
+// function tablicaumnojenia(){
+//   let a = +(prompt("введите число из таблицы умножения"))
+// for (let i =2 ; i <=9; i++){
+// let result = i* a;
+// console.log(`${a}` * ${i} = *{result})
+//   }
+// }
+// tablicaumnojenia()
+// Написать функцию, которая реализует работу оператора %.
+// Функция принимает 2 параметра и возвращает остаток от
+// деления первого параметра на второй. В функции исполь-
+// зовать только + - * /, оператор % не использовать.
+// function ostatokotdelenia(a,b){
+//   let mnoz = 1
+//   let acum =a -b
+//   while(acum>b){
+//     acum -= b
+//     mnoz++
+//   }
+// return a - b*mnoz
+// }
+// console.log(ostatokotdelenia(11,2))
+// console.log(ostatokotdelenia(11,3))
+// console.log(ostatokotdelenia(11,4))
+// Написать функцию, которая принимает от 1 до 5 чисел и
+// возвращает их сумму.
+// function summa(a,b=0,c=0,d=0,e=0){
+//   return a+b+c+d+e}
+//   console.log(summa(9))
+//   console.log(summa(1,2))
+//   console.log(summa(9,5,8))
+//   console.log(summa(9,6,7,3))
+//   console.log(summa(9,3,4,2,3))
+
+// Написать функцию, которая принимает от 1 до 5 чисел и
+// возвращает большее из них.
+

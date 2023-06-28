@@ -474,12 +474,488 @@
 //     1. Функция для вывода на экран информации об автомобиле.
 //     2. Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью.
 //     Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час
-var automobil = [{
-        gorod: 'USA',
-        model: 'dodge',
-        god: '2019',
-        maksspeed: '290'
-    }];
-function showAutomobil(arr) {
-    console.log(arr);
-}
+// const automobil = [{
+//     gorod:'USA' ,
+//     model:'dodge',
+//     god:'2019',
+//     speed:'290'
+// }]
+// function showAutomobil(arr:any[]){
+//     console.log(arr)
+// function showTravelTime() {
+//     var length = prompt("Введите расстояние (км)", "");
+//     var time = computeTravelTime(length)
+//     console.log("Средняя скорость: " + automobil.speed + " км/ч\n"
+//         + "Расстояние: " + length + " км\n"
+//         + "Время для преодоления: " + time + " ч");
+// }
+// function computeTravelTime(length) {
+//     var t = Math.round(
+//         (length / car.averageSpeed) * 100
+//         ) / 100;
+//     // находим остаток
+//     var ost = t % 1;
+//     // преобразовуем в минуты
+//     ost = ost * 0.6;
+//     // время (остаток в минутах)
+//     t = Math.floor(t) + ost;
+//     // учитываем перерыв на 1 час (каждые 4 часа дороги).
+//     var breakTime = Math.floor(t / 4);
+//     return (t + breakTime).toFixed(2);
+// }
+// Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы с этим объектом.
+// const time = [{
+//     hh : 20,
+//     mm : 30,
+//     ss : 45
+// }];
+// function showTime() {
+//     console.log( ( '0' + time.hh).slice(-2) 
+//         + ":"
+//         + ('0' + time.mm).slice(-2)
+//         + ":" 
+//         + ('0' + time.ss).slice(-2)
+//         );
+// }
+// function setSecond(second) {
+//     // Проверяем нужно ли менять минуты.
+//     if (time.ss + second > 59) {
+//         // узнать сколько минут
+//         let mm = Math.floor(second / 60);
+//         // и сколько секунд оставить
+//         if (mm == 0) {
+//             setMinute(1);
+//             second = (time.ss + second) - 60;
+//             time.ss = 0;
+//         }
+//         else{
+//             setMinute(mm);
+//             second = (time.ss + second) - (mm * 60);
+//             time.ss = 0;
+//         }
+//     }
+//     // Меняем секунды.
+//     time.ss += second;
+// }
+// function setMinute(minute) {
+//     // Проверяем нужно ли менять часы.
+//     if (time.mm + minute > 59) {
+//         // узнать сколько часов
+//         var hh = Math.floor(minute / 60);
+//         // и сколько минут оставить
+//         if (hh == 0) {
+//             setHour(1);
+//             minute = (time.mm + minute) - 60;
+//             time.mm = 0;
+//         }
+//         else{
+//             setHour(hh);
+//             minute = (time.mm + minute) - (hh * 60);
+//             time.mm = 0;
+//         }
+//     }
+//     time.mm += minute;
+// }
+// function setHour(hour) {
+//     // Проверяем нужно ли менять счетчик часов.
+//     if (time.hh + hour > 23) {
+//         // узнать сколько дней (дни не выводим и не меняем).
+//         var dd = Math.floor(hour / 24);
+//         // и сколько минут оставить
+//         if (dd == 0) {
+//             hour = (time.hh + hour) - 24;
+//             time.hh = 0;
+//         }
+//         else{
+//             hour = (time.hh + hour) - (dd * 24);
+//             time.hh = 0;
+//         }
+//     }
+//     time.hh += hour;
+// }
+// function changeSeconds() {
+//     var ss = prompt("Введите кол-во секунд для изменения времени", "");
+//     setSecond(+ss);
+//     showTime();
+// }
+// function changeMinutes() {
+//     var mm = prompt("Введите кол-во минут для изменения времени", "");
+//     setMinute(+mm);
+//     showTime();
+// }
+// function changeHours() {
+//     var hh = prompt("Введите кол-во часов для изменения времени", "");
+//     setHour(+hh);
+//     showTime();
+// Запросите у пользователя его имя и выведите в ответ:
+// «Привет, его имя!».
+// let a = +prompt("напиши свое имя")
+// alert(a)
+//Запросите у пользователя год его рождения, посчитайте,
+// сколько ему лет и выведите результат. 
+// let b = (prompt("какой год рождения?")as string)
+// console.log(2023-b)
+//. Запросите у пользователя длину стороны квадрата и выведите периметр такого квадрата. 
+// let a = +prompt("введите сторону квадрата")
+// alert(a *4)
+// Запросите у пользователя радиус окружности и выведите
+// площадь такой окружности.
+// let r = prompt("введите радиус окружности")
+// alert(3,14*r**2)
+// Запросите у пользователя расстояние в км между двумя
+// городами и за сколько часов он хочет добраться. Посчитайте скорость, с которой необходимо двигаться, чтобы
+// успеть вовремя.
+// let r = +prompt("введите расстояяние между двумя городами")
+// let e = +prompt("введите время")
+// alert(r/e)
+// Реализуйте конвертор валют. Пользователь вводит доллары, программа переводит в евро. Курс валюты храните в
+// константе.
+// const euro = Number(prompt('Введите текущий курс доллара по отношению к евро: ')); 
+// var dollar = Number(prompt('Введите количество долларов для обмена: '));
+// alert("По текущему курсу при обмене вы получите " + dollar * euro + " евро");
+// // Задача 10: Запросите у пользователя целое число и выведите ответ, четное число или нет. В задании
+// // используйте логические операторы. В задании не надо использовать if или swich.
+// alert(`Задача 10: Запросите у пользователя целое число и выведите ответ, четное число или нет. В задании
+// используйте логические операторы. В задании не надо использовать if или swich.`);
+// var a = prompt('Введите число для проверки на четность: ');
+// a = Number(a);
+// alert((parseInt(a) % 2 == 0) ? "ЧЁТНОЕ" : "НЕЧЁТНОЕ");
+// // // Задача 9: Запросите у пользователя трехзначное число и выведите его задом наперед. Для решения
+// // // задачи вам понадобится оператор % (остаток от деления).
+// alert(
+//   "Задача 9: Запросите у пользователя трехзначное число и выведите его задом наперед. Для решения задачи вам понадобится оператор % (остаток от деления)"
+// );
+// nmb = prompt('Введите трехзначное число: ');
+// var a = Number(nmb % 10);
+// var b = Number((nmb - a) / 10 % 10);
+// var c = Number((nmb - a - b * 10) / 100);
+// alert('Перевертыш: ' + (a * 100 + b * 10 + c));
+// // // Задача 8: Пользователь вводит сумму денег в кошельке и цену одной шоколадки. Программа выводит, сколько
+// // // шоколадок может купить пользователь и сколько сдачи у него останется.
+// alert(`Задача 8: Пользователь вводит сумму денег в кошельке и цену одной шоколадки. Программа выводит, сколько шоколадок может купить пользователь и сколько сдачи у него останется.`);
+// var sum = prompt("Cколько у вас в бумажнике денег? ");
+// var price = prompt("И почем одна шоколадка? ");
+// sum = Number(sum);
+// price = Number(price);
+// var sell = Math.trunc(sum / price);
+// var change = sum - price * sell;
+// if (sell < 1) {
+//   alert('Сегодня вы на нуле. приходите в другой раз');
+// }
+// else {
+//   alert('Получите свои ' + sell + ' шоколадки, а также сдачу ' + (sum - price * sell) + ' рублей ');
+// }
+// // Задача 7: Пользователь указывает объем флешки в Гб. Программа должна посчитать,
+// //сколько файлов размеров в 820 Мб помещается на флешку.
+// alert('Задача 7: Пользователь указывает объем флешки в Гб.Программа должна посчитать, сколько файлов размеров в 820 Мб помещается на флешку.');
+// const GB_MB = 1024;
+// var flash_drive = Number(prompt('Каков объем вашей флешки в Гб? '));
+// var size = Math.trunc(flash_drive * 1000 / GB_MB);
+// if (size < 0) {
+//   alert('Ваша флешка перезаполнена, освободите пространство');
+// }
+// else {
+//   alert('На флешку поместится ' + size + ' файлов объемом 820 Мб');
+// Подсчитать сумму всех чисел в заданном пользователем
+// диапазоне.
+// let num1 = +prompt("1 число ");
+// let num2 = +prompt("2 число ");
+// let a = 0;
+// for (let i = num1; i <= num2; i++)
+// {
+//     a += i;
+// }
+// console.log(a);
+// Запросить 2 числа и найти только наибольший общий делитель
+// let a = +prompt("1 число ");
+// let b = prompt("2 число ");
+// let temp1 = a;
+// let temp2 = b;
+// let temp;
+// if (temp1 > temp2) 
+// {
+//     while (true) 
+//     {
+//         temp = temp1 % temp2;
+//         if (temp == 0) 
+//         {
+//             console.log(temp2);
+//             break;
+//         }
+//         else
+//         {
+//             temp1 = temp2;
+//             temp2 = temp;
+//         }
+//     }
+// }
+// else 
+// {
+//     while (true) 
+//     {
+//         temp = temp2 % temp1;
+//         if (temp == 0) 
+//         {
+//             console.log(temp1);
+//             break;
+//         }
+//         else
+//         {
+//             temp2 = temp1;
+//             temp1 = temp;
+//         }
+//     }
+// }
+//3. Запросить у пользователя число и вывести все делители этого числа. 
+// let num = +prompt("Enter the number: ");
+// let result = '';
+// for (let i = 1; i <= num; i++)
+// {
+//     if ((num % i) == 0)
+//     {
+//         result += i;
+//         result += ' ';
+//     }
+// }
+// console.log(result);
+//4. Определить количество цифр в введенном числе.
+// let num = +prompt("Enter the number: ");
+// let result = 0;
+// while(num > 0)
+// {
+//     result += 1;
+//     num /= 10;
+//     num = Number.parseInt(num);
+// }
+// console.log(result);
+//5. Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей. При этом также посчитать, сколько четных и нечетных. Вывести статистику на экран. чтите, что достаточно одной переменной (не 10) для ввода чисел пользователем.
+// let positiveNum = 0;
+// let negativeNum = 0;
+// let zeroNumber = 0;
+// let oddNum = 0;
+// let evenNum = 0;
+// let result = '';
+// let num = 0;
+// for (let i = 1; i <= 10; i++)
+// {
+//     num = +prompt(`Enter the ${i} number: `);
+//     if (num > 0) { positiveNum++; }
+//     else
+//     if (num < 0) { negativeNum++; }
+//     else
+//     if (num == 0) { zeroNumber++; }
+//     if (num % 2 == 0) { oddNum++; }
+//     else
+//     { evenNum++; }
+//     result += num.toString() + ' ';
+// }    
+// console.log(`Positive number count: ${positiveNum} \nNegative number count: ${negativeNum} \nZero number count: ${zeroNumber} \nEven number count: ${evenNum} \nOdd number count: ${oddNum}`);
+// console.log(`Results: ${result}`);
+//6. Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. И так до тех пор, пока пользователь не откажется.//
+// let num1 = 0;
+// let num2 = 0;
+// let oper = 0;
+// let result = 0;
+// while(true)
+// {
+//     num1 = +prompt("Enter the first number: ");
+//     num2 = +prompt("Enter the second number: ");
+//     oper = prompt("Enter the operation: ");
+//     switch(oper)
+//     {
+//         case '+':
+//             result = num1 + num2;
+//             break;
+//         case '-':
+//             result = num1 - num2;
+//             break;
+//         case '*':
+//             result = num1 * num2;
+//             break;
+//         case '/':
+//             result = num1 / num2;
+//             break;
+//     }
+//     if (!confirm(`${num1} ${oper} ${num2} = ${result}\nDo u want to solve another example?`))
+//     {
+//         break;
+//     }
+// }
+//7. Запросить у пользователя число и на сколько цифр его сдвинуть. Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).
+// let num = 0;
+// let count = 0;
+// let dir = '';
+// let temp = 0;
+// let numCount = 0;
+// let numTemp = 0;
+// while (true) 
+// {
+//     num = +prompt("Enter the numer:");
+//     count = +prompt("Enter the count of shift:");
+//     dir = prompt("Enter the direction ( < | > ):");
+//     numTemp = num;
+//     while(numTemp > 0)
+//     {
+//         numCount += 1;
+//         numTemp /= 10;
+//         numTemp = Number.parseInt(numTemp);
+//     }
+//     numTemp = num;
+//     for (let i = 0; i < count; i++) 
+//     {
+//         if (dir == '>')
+//         {
+//             temp = num % 10;
+//             num = Number.parseInt(num / 10);
+//             num = (temp * Math.pow(10, numCount - 1)) + num;
+//         }
+//         else
+//         {
+//             temp = Number.parseInt(num / Math.pow(10, numCount - 1));
+//             num %= Math.pow(10, numCount - 1);
+//             num = (num * 10) + temp;
+//         }
+//     }
+//     if (!confirm(`Your number is ${numTemp}, u want to shift by ${count} numeric, by ${dir} direction \n Result: ${num} \n Continue?`))
+//     {
+//         break;
+//     }
+//     num = 0;
+//     count = 0;
+//     dir = '';
+//     temp = 0;
+//     numCount = 0;
+//     numTemp = 0;
+// }
+// Запросите у пользователя число, возведите это число во
+//2-ю степень и выведите на экран.
+// let a= +prompt("введите число")
+// alert(a**2)
+//Запросите у пользователя 2 числа и выведите среднее арифметическое этих чисел
+// let a =+prompt("1num")
+// let b = +prompt("2num")
+// alert((a+b)/2)
+//Запросите у пользователя длину стороны квадрата и выведите площадь такого квадрата
+// let a = +prompt("введите сторону квадрата")
+// alert(a*4)
+// Реализуйте конвертор из километров в мили (пользователь
+//     вводит километры, программа выводит мили). 1 км = 0,621371
+//     миль. Это значение укажите в коде как константу
+// const mili = Number(0,621371); 
+// var km = Number(prompt('Введите km: '));
+// alert("итого - " + km * mili + " миль");
+// 5. Реализуйте калькулятор. Пользователь вводит два числа,
+// а программа выводит результаты действий + - * / между
+// этими числами.
+// let a = +prompt("1num")
+// let b = +prompt("2num")
+// let c = +prompt("введите знак")
+// if (c = "+"){
+//     alert(a+b)
+// }
+// else if (c = "/"){
+//     alert(a/b)
+// }
+// else if (c = "*"){
+//     alert(a*b)
+// }
+// else if (c = "-"){
+//     alert(a-b)
+// }
+// Пользователь вводит значения a и b для формулы a * x + b = 0,
+// а программа считает и выводит значение x.
+// let a = +prompt("1num")
+// let b = +prompt("2num")
+// alert(-b/a)
+// Запросите у пользователя текущее время (часы и минуты)
+// и выведите, сколько часов и минут осталось до следующего
+// дня.
+// let a = +prompt("h")
+// let b = +prompt("m")
+// if (h>0 && h<24 && m>0 && m<60){
+//     alert(24-h && 60 - m)
+// }
+// 1
+// Написать функцию, которая принимает 2 числа и возвра-
+// щает меньшее из них.
+// function prinemaetDvachisla(){
+//   let a = +(prompt("1 num"));
+//   let b = +(prompt("2 num"));
+//   if(a>b){
+//     console.log(b)
+//   }
+//   else if (a<b){
+//     console.log(a)
+//   }
+// }
+// prinemaetDvachisla()
+// Написать функцию, которая возводит переданное число
+// в указанную степень.
+// function exponent(){
+//   let a = +(prompt("число которое возвести в степени"));
+//   let b = +(prompt("степень"));
+//   console.log(a**b)
+// }
+// exponent()
+// Написать функцию, которая принимает 2 числа и знак
+// (+ - * /), считает пример и возвращает результат.
+// function calculator(){
+//   let a = +(prompt("1 num"))
+//   let b = +(prompt("2 num"))
+//   let c = prompt("znak")
+//   if (c=='+') return a+b
+//   if (c=='-') return a-b
+//   if (c=='*') return a*b
+// }
+// console.log(calculator())
+// Написать функцию, которая проверяет, является ли пере-
+// данное ей число простым.
+// function prostoechislo(){
+//   let a = +(prompt('enter number'));
+//   if (a/a && a/1){
+//     console.log("простое")
+//   }
+//   else{
+//     console.log("не простое")
+//   }
+// }
+// console.log(prostoechislo())
+// 5
+// Написать функцию, которая принимает число и выводит
+// таблицу умножения для этого числа. Вызовите функцию
+// для всех чисел от 2 до 9
+// function tablicaumnojenia(){
+//   let a = +(prompt("введите число из таблицы умножения"))
+// for (let i =2 ; i <=9; i++){
+// let result = i* a;
+// console.log(`${a}` * ${i} = *{result})
+//   }
+// }
+// tablicaumnojenia()
+// Написать функцию, которая реализует работу оператора %.
+// Функция принимает 2 параметра и возвращает остаток от
+// деления первого параметра на второй. В функции исполь-
+// зовать только + - * /, оператор % не использовать.
+// function ostatokotdelenia(a,b){
+//   let mnoz = 1
+//   let acum =a -b
+//   while(acum>b){
+//     acum -= b
+//     mnoz++
+//   }
+// return a - b*mnoz
+// }
+// console.log(ostatokotdelenia(11,2))
+// console.log(ostatokotdelenia(11,3))
+// console.log(ostatokotdelenia(11,4))
+// Написать функцию, которая принимает от 1 до 5 чисел и
+// возвращает их сумму.
+// function summa(a,b=0,c=0,d=0,e=0){
+//   return a+b+c+d+e}
+//   console.log(summa(9))
+//   console.log(summa(1,2))
+//   console.log(summa(9,5,8))
+//   console.log(summa(9,6,7,3))
+//   console.log(summa(9,3,4,2,3))
+// Написать функцию, которая принимает от 1 до 5 чисел и
+// возвращает большее из них.
