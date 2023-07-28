@@ -1030,3 +1030,42 @@
 //   get radius() {
 //     return this.r;
 //   }
+var HtmlElement = /** @class */ (function () {
+    function HtmlElement(tag, single, text) {
+        this.attrs = [];
+        this.styles = [];
+        this.elements = [];
+        this.tag = tag;
+        this.single = single;
+        this.text = text;
+    }
+    HtmlElement.prototype.setAttr = function (attr) {
+        this.attrs.push(attr);
+    };
+    HtmlElement.prototype.setStyle = function (style) {
+        this.styles.push(style);
+    };
+    HtmlElement.prototype.appendElement = function (element) {
+        this.elements.push(element);
+    };
+    HtmlElement.prototype.prependElement = function (element) {
+        this.elements.unshift(element);
+    };
+    HtmlElement.prototype.getHtml = function () {
+        if (this.single) {
+            return "<" + this.tag + " " + this.attrs.join(' ') + " value=\"" + this.text + "\" >";
+        }
+        else {
+            return "<" + this.tag + " " + this.attrs.join(' ') + ">" + this.text + "</" + this.tag + ">";
+        }
+    };
+    return HtmlElement;
+}());
+var imgElement = new HtmlElement('img', true, '');
+var pElement = new HtmlElement('p', false, 'sfdsfsdfsd');
+imgElement.setAttr('id="img"');
+imgElement.setStyle('color:red');
+imgElement.setStyle('padding:10px');
+imgElement.setAttr("style=\"" + imgElement.styles.join(';') + "\"");
+console.log(imgElement.getHtml());
+console.log(pElement.getHtml());

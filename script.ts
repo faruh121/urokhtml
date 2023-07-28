@@ -1201,8 +1201,49 @@
 //     return this.r;
 //   }
 
+class HtmlElement{
+  tag:string
+  single:boolean
+  text:string
+  attrs:string[] =[]
+  styles:string[] = []
+  elements:HtmlElement[] = []
+  constructor(tag:string,single:boolean,text:string){
+    this.tag = tag
+    this.single = single
+    this.text = text
+  }
+  setAttr(attr:string){
+    this.attrs.push(attr)
+  }
+  setStyle(style:string){
+    this.styles.push(style)
+  }
+  appendElement(element:HtmlElement){
+    this.elements.push(element)
+  }
+  prependElement(element:HtmlElement){
+    this.elements.unshift(element)
+  }
 
- 
+  getHtml(){
+    if (this.single){
+      return `<${this.tag} ${this.attrs.join(' ')} value="${this.text}" >`
+    }else{
+      return `<${this.tag} ${this.attrs.join(' ')}>${this.text}</${this.tag}>`
+    }
+  }
+}
+
+const imgElement = new HtmlElement('img',true,'')
+const pElement = new HtmlElement('p',false,'sfdsfsdfsd')
+imgElement.setAttr('id="img"')
+imgElement.setStyle('color:red')
+imgElement.setStyle('padding:10px')
+imgElement.setAttr(`style="${imgElement.styles.join(';')}"`)
+console.log(imgElement.getHtml())
+console.log(pElement.getHtml())
+
 
 
 
