@@ -1230,18 +1230,21 @@ class HtmlElement{
     if (this.single){
       return `<${this.tag} ${this.attrs.join(' ')} value="${this.text}" >`
     }else{
-      return `<${this.tag} ${this.attrs.join(' ')}>${this.text}</${this.tag}>`
+      const begin = `<${this.tag} ${this.attrs.join(' ')}>${this.text}`
+      const end = `</${this.tag}>`
+      return begin +this.elements.map(el=>el.getHtml()).join('')+ end
     }
   }
 }
 
-const imgElement = new HtmlElement('img',true,'')
 const pElement = new HtmlElement('p',false,'sfdsfsdfsd')
+const imgElement = new HtmlElement('img',true,'')
 imgElement.setAttr('id="img"')
 imgElement.setStyle('color:red')
 imgElement.setStyle('padding:10px')
 imgElement.setAttr(`style="${imgElement.styles.join(';')}"`)
 console.log(imgElement.getHtml())
+pElement.appendElement(imgElement)
 console.log(pElement.getHtml())
 
 

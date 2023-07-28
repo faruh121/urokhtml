@@ -1056,16 +1056,19 @@ var HtmlElement = /** @class */ (function () {
             return "<" + this.tag + " " + this.attrs.join(' ') + " value=\"" + this.text + "\" >";
         }
         else {
-            return "<" + this.tag + " " + this.attrs.join(' ') + ">" + this.text + "</" + this.tag + ">";
+            var begin = "<" + this.tag + " " + this.attrs.join(' ') + ">" + this.text;
+            var end = "</" + this.tag + ">";
+            return begin + this.elements.map(function (el) { return el.getHtml(); }).join('') + end;
         }
     };
     return HtmlElement;
 }());
-var imgElement = new HtmlElement('img', true, '');
 var pElement = new HtmlElement('p', false, 'sfdsfsdfsd');
+var imgElement = new HtmlElement('img', true, '');
 imgElement.setAttr('id="img"');
 imgElement.setStyle('color:red');
 imgElement.setStyle('padding:10px');
 imgElement.setAttr("style=\"" + imgElement.styles.join(';') + "\"");
 console.log(imgElement.getHtml());
+pElement.appendElement(imgElement);
 console.log(pElement.getHtml());
